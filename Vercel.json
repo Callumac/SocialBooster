@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "src/pages/api/generate.ts", "use": "@vercel/node" },
+    { "src": "src/pages/index.tsx", "use": "@vercel/next" }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/src/pages/api/generate.ts" },
+    { "src": "/(.*)", "dest": "/src/pages/index.tsx" }
+  ]
+}
